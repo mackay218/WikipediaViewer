@@ -8,15 +8,22 @@
 </head>
 <body>
   <h1>Wikipedia Viewer</h1>
-  <a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">
+  <a class="button" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">
     Random Article
   </a>
-
+  <div class="formContainer">
     <label for="searchInput" name="search"></label>
     <input class="formInput" id="searchInput" type="text"
-           name="searchInput" placeholder="What are you looking for?" required>
-    <input id="searchBtn" type="submit" value="Search">
+          name="searchInput" placeholder="What are you looking for?" required>
+    <div id="searchBtn" class="searchBtn" type="submit" value="Search">Search</div>
+  </div>
 
+
+    <div id="resultsContainer" class="container">
+      <div id="resultsWrapper" class="wrapper">
+
+      </div>
+    </div>
 
 
   <!--for using jquery -->

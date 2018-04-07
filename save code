@@ -1,0 +1,37 @@
+https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=
+
+
+//iterate over each response to get page title
+for(i = 0; i < responseArray.length; i++){
+  //get title of page
+  pageTitles.push(responseArray[i].title);
+
+  pageTitleAppended = pageTitles[i].replace(" ", "%20");
+
+  //append title to api query of first section of page
+  pageString = "https://en.wikipedia.org/w/api.php?action=opensearch&search="
+                + pageTitleAppended + "&limit=1&format=json&callback=?";
+
+  $.getJSON(pageString, function(result){
+
+    var title = result[0].replace(" ", "%20");
+
+            articles.push({
+                     title: result[0],
+                     summary: result[2][0],
+                     pageURL: result[3][0]
+            });
+
+    var itemID = $.getJSON("https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles="
+                            + pageTitleAppended + "&format=json&callback=?", function(data){
+
+                            var qID = data.entities;
+                            console.log(qID);
+
+
+                  });
+
+
+  });
+}
+console.log(articles);
