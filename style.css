@@ -105,7 +105,8 @@ h1{
 }
 
 .picImage{
-  width: 600px;
+  width: 100px;
+  height: 100px;
   background-repeat: no-repeat;
   background-size: contain;
 }
