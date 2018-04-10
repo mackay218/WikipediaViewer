@@ -114,10 +114,10 @@ h1{
 }
 
   .formInput{
-    height: 5vh;
+    height: 8vh;
     width: 2vw;
     font-family: "Roboto", sans-serif;
-    font-size: 2vh;
+    font-size: 16px;
     padding-left: 15px;
     background: rgba(0,0,0,0.2);
     border: 2px solid #fff;
@@ -133,9 +133,9 @@ h1{
 .searchBtn{
   position: relative;
   bottom: 2px;
-  height: 6vh;
+  height: 8vh;
   width: 18vh;
-  padding: 2px;
+  padding: 10px 2px 0 2px;
   font-family: "Roboto", sans-serif;
   font-size: 4vh;
   text-align: center;
