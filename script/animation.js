@@ -16,11 +16,22 @@
 
   var searchTl = new TimelineLite({paused: true});
 
-  searchTl.add(TweenLite.to(".container", 0.01, {opacity: 1}));
-  searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
-  searchTl.add(TweenLite.from(".container", 3, {width: 0}));
-  searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));
-  searchTl.add(TweenLite.from(".container", 0.5, {height: 0}));
+  if(window.innerWidth > window.innerHeight){
+    searchTl.add(TweenLite.to(".container", 0.01, {opacity: 1}));
+    searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
+    searchTl.add(TweenLite.to(".container", 3, {width: "90vw"}));
+    searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));
+    searchTl.add(TweenLite.to(".container", 0.5, {height: "45vh"}));
+  }
+
+  if(window.innerHeight > window.innerWidth){
+    searchTl.add(TweenLite.to(".container", 0.01, {opacity: 1}));
+    searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
+    searchTl.add(TweenLite.to(".container", 3, {width: "90vw"}));
+    searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));
+    searchTl.add(TweenLite.to(".container", 0.5, {height: "55vh"}));
+  }
+
 
   var logoTl = new TimelineLite({paused: true});
 
@@ -39,3 +50,28 @@
       logoTl.restart();
     }
   });
+
+
+var linkCount = document.getElementsByClassName("pageLink");
+
+var containerTl = new TimelineLite({paused: true});
+
+$(window).on("orientationchange", function(){
+  if(linkCount.length > 0){
+    setTimeout(function(){
+      if(window.innerWidth > window.innerHeight){
+        containerTl.add(TweenLite.to(".container", 0.1,{height: "55vh"}));
+        containerTl.add(TweenLite.to(".container", 0.1, {width: "90vw"}));
+
+        containerTl.restart();
+      }
+      if(window.innerHeight > window.innerWidth){
+        containerTl.add(TweenLite.to(".container", 0.1,{height: "45vh"}));
+        containerTl.add(TweenLite.to(".container", 0.1, {width: "90vw"}));
+
+        containerTl.restart();
+      }
+    }, 0.5);
+
+  }
+});
