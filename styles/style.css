@@ -88,7 +88,7 @@ h1{
 
 @media only screen and (orientation: portrait) and (max-width: 1024px){
   .button{
-    padding-top: 10px;
+    padding-top: 1vh;
     transition: 0.5s;
   }
 }
@@ -117,7 +117,7 @@ h1{
     height: 8vh;
     width: 2vw;
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
+    font-size: 4vh;
     padding-left: 15px;
     background: rgba(0,0,0,0.2);
     border: 2px solid #fff;
@@ -135,7 +135,7 @@ h1{
   bottom: 2px;
   height: 8vh;
   width: 18vh;
-  padding: 10px 2px 0 2px;
+  padding: 1vh 2px 0 2px;
   font-family: "Roboto", sans-serif;
   font-size: 4vh;
   text-align: center;
