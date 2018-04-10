@@ -13,7 +13,7 @@ $(document).ready(function(){
       console.log("enter key hit");
 
       $("#resultsWrapper").empty();
-      $("#resultsWrapper").focus();
+      $("#resultsContainer").focus();
 
       //get text from input form
       input = document.getElementById("searchInput").value;
@@ -209,7 +209,9 @@ $(document).ready(function(){
   $("#searchBtn").click(function(){
 
     $("#resultsWrapper").empty();
-    $("#resultsWrapper").focus();
+    $("#resultsContainer").focus();
+
+
 
     //get text from input form
     input = document.getElementById("searchInput").value;

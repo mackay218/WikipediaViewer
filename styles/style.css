@@ -1,0 +1,231 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient( 170deg, #fff, #f0f0f0, #000);
+  color: black;
+  overflow: hidden;
+  display: grid;
+  grid: auto auto auto auto auto/ 33% 33% 33%;
+}
+
+h1{
+  grid-row: 1/2;
+  grid-column: 1/4;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  font-family: "EB Garamond", serif;
+  font-size: 8vh;
+  text-align: center;
+}
+
+.buttonContainer{
+  grid-row: 2/3;
+  grid-column: 1/4;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button{
+  font-family: "Roboto", sans-serif;
+  font-size: 4vh;
+  height: 6vh;
+  width: 26vw;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  text-shadow: -1px 1px rgba(255,255,255,0.2);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
+}
+
+@media only screen and (orientation: portrait){
+  .button{
+    font-size: 2.5vh;
+    width: 35vw;
+  }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 1024px){
+  .button{
+    padding-top: 10px;
+  }
+}
+
+.formContainer{
+  grid-row: 3/4;
+  grid-column: 1/4;
+  display: flex;
+  flex-direction: row;
+  padding-left: 12vw;
+}
+
+@media only screen and (orientation: landscape){
+  .formContainer{
+    padding-left: 20vw;
+  }
+
+}
+
+  .formInput{
+    height: 5vh;
+    width: 55vw;
+    font-family: "Roboto", sans-serif;
+    font-size: 2vh;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.2);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    color: black;
+    outline: none;
+    box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
+}
+
+.searchBtn{
+  position: relative;
+  bottom: 2px;
+  height: 6vh;
+  width: 15vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 4vh;
+  text-align: center;
+  margin-left: 10px;
+  color: #fff;
+  text-shadow: -1px 1px rgba(255,255,255,0.2);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
+}
+
+.container{
+  grid-row: 4/5;
+  grid-column: 1/4;
+  margin-left: 5vw;
+  height: 55vh;
+  width: 90vw;
+  outline: none;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 -5px 10px rgba(0,0,0,0.5), inset 0 5px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0 -5px 10px rgba(0,0,0,0.5), inset 0 5px 10px rgba(0,0,0,0.5);
+  box-shadow: inset 0 -5px 10px rgba(0,0,0,0.5), inset 0 5px 10px rgba(0,0,0,0.5);
+  overflow-y: scroll;
+}
+
+.wrapper{
+  height: auto;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.pageLink{
+  border: 1px solid blue;
+  margin-top: 10px;
+  text-decoration: none;
+  font-family: "EB Garamond", serif;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.4);
+  border-left: 2px solid rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+  border-right: 2px solid rgba(255,255,255,0.5);
+  border-top: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  color: white;
+  -webkit-box-shadow: 0 -2px 10px rgba(0,0,0,0.5), 0 2px 10px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 -2px 10px rgba(0,0,0,0.5), 0 2px 10px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5), 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+
+.page{
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+
+}
+
+@media only screen and (orientation: portrait){
+  .page{
+      padding-right: 20px;
+  }
+
+}
+
+.picImage{
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.content{
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  list-style-type: none;
+  background: transparent;
+}
+
+.content2{
+  position: relative;
+  left: 80px;
+  width: 85%;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  list-style-type: none;
+  background: transparent;
+}
+
+.summary{
+  padding-right: 10px;
+}
+
+.disambiguation{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#signature{
+  grid-row: 5/6;
+  grid-column: 2/3;
+  width: auto;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 2;
+}
+
+.portfolioLink{
+  width: auto;
+  height: auto;
+  display: flex;
+  color: white;
+  font-family: "EB Garamond", serif;
+  text-decoration: none;
+}
+
+.heroLogo{
+  position: relative;
+  font-size: 60px;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+
+}
