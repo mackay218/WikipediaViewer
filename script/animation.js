@@ -5,7 +5,7 @@
   if(window.innerWidth > window.innerHeight){
     startUpTl.add(TweenLite.to("#searchInput", 0.5, {width: "50vw"}));
   }
-  else if(window.innerHeight > window.innerWidth){
+  if(window.innerHeight > window.innerWidth){
     startUpTl.add(TweenLite.to("#searchInput", 0.5, {width: "80vw"}));
   }
 

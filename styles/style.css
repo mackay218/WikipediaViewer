@@ -54,11 +54,16 @@ h1{
   text-shadow: -1px 1px rgba(255,255,255,0.2);
   border: 2px solid #fff;
   border-radius: 20px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   -moz-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   transition: 0.5s;
+}
+
+.button:hover{
+  background-color: rgba(0,0,0,0.2);
+  text-shadow: -1px 1px rgba(0,0,0,0.8);
 }
 
 @media only screen and (orientation: portrait){
@@ -138,11 +143,16 @@ h1{
   text-shadow: -1px 1px rgba(255,255,255,0.2);
   border: 2px solid #fff;
   border-radius: 20px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   -moz-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2), 0 0 5px 2px rgba(0,0,0,0.5);
   transition: 0.5s;
+}
+
+.searchBtn:hover{
+  background-color: rgba(0,0,0,0.2);
+  text-shadow: -1px 1px rgba(0,0,0,0.8);
 }
 
 @media only screen and (orientation: portrait){
@@ -202,13 +212,17 @@ h1{
   transition: 0.5s;
 }
 
+.page:hover{
+  background-color: rgba(255,255,255,0.2);
+}
+
 .page{
   display: flex;
   flex-direction: row;
   background-repeat: no-repeat;
   background-size: 50px;
   transition: 0.5s;
-
+  border-radius: 20px;
 }
 
 @media only screen and (orientation: portrait){
@@ -337,9 +351,21 @@ h3{
   text-decoration: none;
 }
 
+.portfolioLink:hover{
+  -webkit-text-stroke: 3px rgba(255,255,255,0.5);
+}
+
+.portfolioLink:hover~.heroLogo{
+  -webkit-text-stroke: 3px rgba(255,255,255,0.5);
+}
+
 .heroLogo{
   position: relative;
   font-size: 60px;
   -webkit-text-stroke: 2px rgba(255,255,255,0.2);
 
+}
+
+.heroLogo:hover~.sig{
+  -webkit-text-stroke: 3px rgba(255,255,255,0.5);
 }
