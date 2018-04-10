@@ -9,7 +9,6 @@
     startUpTl.add(TweenLite.to("#searchInput", 0.5, {width: "80vw"}));
   }
 
-
   startUpTl.add(TweenLite.from("#searchBtn", 0.5, {opacity: 0}));
   startUpTl.add(TweenLite.from(".button", 0.5, {opacity: 0}));
 
@@ -17,6 +16,7 @@
 
   var searchTl = new TimelineLite({paused: true});
 
+  searchTl.add(TweenLite.to(".container", 0.01, {opacity: 1}));
   searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
   searchTl.add(TweenLite.from(".container", 3, {width: 0}));
   searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));

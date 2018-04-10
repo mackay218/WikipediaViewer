@@ -400,4 +400,13 @@ $(document).ready(function(){
       console.log(articles);
     });
   });
+
+  $(window).on("orientationchange", function(event){
+    if(window.innerWidth > window.innerHeight){
+      $("#searchInput").attr("style", "width: 50vw");
+    }
+    else if(window.innerHeight > window.innerWidth){
+      $("#searchInput").attr("style", "width: 80vw");
+    }
+  });
 });
