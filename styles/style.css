@@ -131,8 +131,6 @@ h1{
 }
 
 .searchBtn{
-  position: relative;
-  bottom: 2px;
   height: 8vh;
   width: 18vh;
   padding: 1vh 2px 0 2px;
@@ -298,17 +296,17 @@ h1{
 }
 
 h3{
-  font-size: 3vw;
+  font-size: 4vw;
 }
 
 .summary{
   padding-right: 10px;
-  font-size: 2.5vw;
+  font-size: 3vw;
 }
 
 .disambiguation{
   font-weight: bold;
-  font-size: 30px;
+  font-size: 4vw;
 }
 
 @media only screen and (orientation: portrait){
