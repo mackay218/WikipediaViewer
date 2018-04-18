@@ -10,9 +10,22 @@ body{
   background: linear-gradient( 170deg, #fff, #f0f0f0, #000);
   color: black;
   overflow: hidden;
-  display: grid;
-  grid: auto auto auto auto auto/ auto auto auto;
+
   grid-row-gap: 10px;
+}
+
+@media only screen and (orientation: portrait){
+  body{
+    display: grid;
+    grid: 5vh 10vh auto auto auto / auto auto auto
+  }
+}
+
+@media only screen and (orientation: landscape){
+  body{
+    display: grid;
+    grid: 10vh 10vh auto auto auto/ auto auto auto;
+  }
 }
 
 h1{
@@ -27,6 +40,7 @@ h1{
   transition: 0.5s;
 }
 
+
 @media only screen and (orientation: portrait){
   h1{
     font-size: 4vh;
@@ -34,20 +48,26 @@ h1{
   }
 }
 
-.buttonContainer{
-  grid-row: 2/3;
+.formContainer{
+  grid-row: 3/4;
   grid-column: 1/4;
+  width: 100vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.buttonContainer{
+  flex-grow: 1;
   height: auto;
-  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 
 .button{
+  height: 8vh;
+  padding-top: 1vh;
   font-family: "Roboto", sans-serif;
-  font-size: 4vh;
-  height: 6vh;
-  width: 26vw;
   text-decoration: none;
   text-align: center;
   color: #fff;
@@ -67,55 +87,50 @@ h1{
 }
 
 @media only screen and (orientation: portrait){
-  .button{
-    font-size: 2.5vh;
-    width: 40vw;
-    transition: 0.5s;
-  }
 
   .formContainer{
-    grid-row: 3/4;
-    grid-column: 1/4;
-    width: 100vw;
-    padding-right: 10vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10vw;
   }
-}
 
-@media only screen and (orientation: portrait) and (max-width: 1024px){
+  .buttonContainer{
+    width: 100vw;
+    margin-top: 5vh;
+  }
+
+  .formInput{
+    width: 0;
+  }
+
   .button{
-    padding-top: 1vh;
+    width: 35vw;
+    font-size: 4vh;
     transition: 0.5s;
   }
 }
 
-
 @media only screen and (orientation: landscape){
   .formContainer{
-    grid-row: 3/4;
-    grid-column: 2/3;
-    width: 100vw;
-    padding-right: 10vw;
     display: flex;
     flex-direction: row;
-    padding-left: 20vw;
+    justify-content: space-between;
   }
-}
 
+  .buttonContainer{
+    margin-left: 2vw;
+  }
 
-@media only screen and (orientation: portrait){
-  .formInput{
-    width: 4vw;
+  .button{
+    width: 12vw;
+    font-size: 4vh;
   }
 }
 
   .formInput{
     height: 8vh;
-    width: 2vw;
+    width: 0;
     font-family: "Roboto", sans-serif;
     font-size: 4vh;
     padding-left: 15px;
@@ -151,17 +166,6 @@ h1{
 .searchBtn:hover{
   background-color: rgba(0,0,0,0.2);
   text-shadow: -1px 1px rgba(0,0,0,0.8);
-}
-
-@media only screen and (orientation: portrait){
-  .searchBtn{
-    margin-top: 10px;
-  }
-}
-@media only screen and (orientation: landscape){
-  .searchBtn{
-    margin-left: 10px;
-  }
 }
 
 .container{

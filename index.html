@@ -38,20 +38,19 @@
 </head>
 <body>
   <h1>WIKIPEDIA VIEWER</h1>
-  <div class="buttonContainer">
-    <a class="button" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">
-      Random Article
-    </a>
-  </div>
 
   <div class="formContainer">
     <input class="formInput" id="searchInput" type="text"
           name="searchInput"
           placeholder="search?"
           required>
-    <div id="searchBtn" class="searchBtn" type="submit" value="Search">Search</div>
+    <div id="buttonContainer" class="buttonContainer">
+      <div id="searchBtn" class="searchBtn" type="submit" value="Search">Search</div>
+      <a class="button" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">
+        Random
+      </a>    
+    </div>
   </div>
-
   <div tabindex="1" id="resultsContainer" class="container">
     <div id="resultsWrapper" class="wrapper"></div>
   </div>

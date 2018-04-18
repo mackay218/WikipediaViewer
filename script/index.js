@@ -10,7 +10,6 @@ $(document).ready(function(){
   //search if enter hit
   $("#searchInput").keypress(function(event){
     if(event.which == 13){
-      console.log("enter key hit");
 
       $("#resultsWrapper").empty();
       $("#resultsContainer").focus();
@@ -25,7 +24,6 @@ $(document).ready(function(){
       $.getJSON(searchString, function(response){
 
         responseArray = response.query.search;
-        console.log(responseArray);
         //iterate over each response to get page title
         for(i = 0; i < responseArray.length; i++){
           //get title of page
@@ -155,7 +153,6 @@ $(document).ready(function(){
                   listItem.appendChild(summary);
                   contentList.appendChild(listItem);
 
-
                   page.appendChild(contentList);
                 }
 
@@ -187,7 +184,6 @@ $(document).ready(function(){
                   page.appendChild(contentList);
                 }
 
-
                 pageLink.appendChild(page);
                 var wrapper = document.getElementById("resultsWrapper");
 
@@ -199,7 +195,6 @@ $(document).ready(function(){
           });
         }
 
-        console.log(articles);
       });
 
     }
@@ -211,8 +206,6 @@ $(document).ready(function(){
     $("#resultsWrapper").empty();
     $("#resultsContainer").focus();
 
-
-
     //get text from input form
     input = document.getElementById("searchInput").value;
 
@@ -223,7 +216,6 @@ $(document).ready(function(){
     $.getJSON(searchString, function(response){
 
       responseArray = response.query.search;
-      console.log(responseArray);
       //iterate over each response to get page title
       for(i = 0; i < responseArray.length; i++){
         //get title of page
@@ -253,7 +245,6 @@ $(document).ready(function(){
 
             if(image.length > 14){
               image = "url("+ image[17] + ")";
-
 
               articles.push({
                        title: result[0],
@@ -353,7 +344,6 @@ $(document).ready(function(){
                 listItem.appendChild(summary);
                 contentList.appendChild(listItem);
 
-
                 page.appendChild(contentList);
               }
 
@@ -385,7 +375,6 @@ $(document).ready(function(){
                 page.appendChild(contentList);
               }
 
-
               pageLink.appendChild(page);
               var wrapper = document.getElementById("resultsWrapper");
 
@@ -397,16 +386,15 @@ $(document).ready(function(){
         });
       }
 
-      console.log(articles);
     });
   });
 
   $(window).on("orientationchange", function(event){
     if(window.innerWidth > window.innerHeight){
-      $("#searchInput").attr("style", "width: 50vw");
+      $("#searchInput").attr("style", "width: 80vw");
     }
     else if(window.innerHeight > window.innerWidth){
-      $("#searchInput").attr("style", "width: 80vw");
+      $("#searchInput").attr("style", "width: 50vw");
     }
   });
 });

@@ -4,9 +4,11 @@
 
   if(window.innerWidth > window.innerHeight){
     startUpTl.add(TweenLite.to("#searchInput", 0.5, {width: "50vw"}));
+    startUpTl.add(TweenLite.from("#searchInput", 0.5, {opacity: 0}), "-=0.5");
   }
   if(window.innerHeight > window.innerWidth){
     startUpTl.add(TweenLite.to("#searchInput", 0.5, {width: "80vw"}));
+    startUpTl.add(TweenLite.from("#searchInput", 0.5, {opacity: 0}), "-=0.5");
   }
 
   startUpTl.add(TweenLite.from("#searchBtn", 0.5, {opacity: 0}));
@@ -21,7 +23,7 @@
     searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
     searchTl.add(TweenLite.to(".container", 3, {width: "90vw"}));
     searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));
-    searchTl.add(TweenLite.to(".container", 0.5, {height: "45vh"}));
+    searchTl.add(TweenLite.to(".container", 0.5, {height: "40vh"}));
   }
 
   if(window.innerHeight > window.innerWidth){
@@ -29,7 +31,7 @@
     searchTl.add(TweenLite.to(".container", 0.1, {borderTop: "2px solid black"}));
     searchTl.add(TweenLite.to(".container", 3, {width: "90vw"}));
     searchTl.add(TweenLite.from(".container", 0.1, {border: "0"}));
-    searchTl.add(TweenLite.to(".container", 0.5, {height: "55vh"}));
+    searchTl.add(TweenLite.to(".container", 0.5, {height: "40vh"}));
   }
 
 
@@ -60,13 +62,13 @@ $(window).on("orientationchange", function(){
   if(linkCount.length > 0){
     setTimeout(function(){
       if(window.innerWidth > window.innerHeight){
-        containerTl.add(TweenLite.to(".container", 0.1,{height: "55vh"}));
+        containerTl.add(TweenLite.to(".container", 0.1,{height: "40vh"}));
         containerTl.add(TweenLite.to(".container", 0.1, {width: "90vw"}));
 
         containerTl.restart();
       }
       if(window.innerHeight > window.innerWidth){
-        containerTl.add(TweenLite.to(".container", 0.1,{height: "45vh"}));
+        containerTl.add(TweenLite.to(".container", 0.1,{height: "40vh"}));
         containerTl.add(TweenLite.to(".container", 0.1, {width: "90vw"}));
 
         containerTl.restart();
