@@ -219,10 +219,11 @@ $(document).ready(function(){
 
   $(window).on("orientationchange", function(event){
     if(window.innerWidth > window.innerHeight){
-      $("#searchInput").attr("style", "width: 80vw");
+      setTimeout($("#searchInput").attr("style", "width: 50vw"), 200);
+
     }
     else if(window.innerHeight > window.innerWidth){
-      $("#searchInput").attr("style", "width: 50vw");
+      setTimeout($("#searchInput").attr("style", "width: 80vw"), 200);
     }
   });
 });
