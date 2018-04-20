@@ -8,6 +8,7 @@ $(document).ready(function(){
   var i = 0;
 
   var priorArray = [];
+  var priorIDs = [];
 
   //search if enter hit
   $("#searchInput").keypress(function(event){
@@ -27,14 +28,10 @@ $(document).ready(function(){
     input = document.getElementById("searchInput").value;
 
     search();
+    priorSearches();
   });
 
   function search(){
-    //create array of prior searches
-    //check if array already contains search
-    if(priorArray.includes(input) == false){
-      priorArray.push(input);
-    }
 
     //append text to api url
     searchString = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" +
@@ -217,6 +214,102 @@ $(document).ready(function(){
 
   }
 
+  function priorSearches(){
+    //create array of prior searches
+    //check if array already contains search
+    if(priorArray.includes(input) == false){
+      priorArray.push(input);
+    }
+
+    var priorSearches = document.getElementById("priorSearches");
+    var priorList = document.getElementsByClassName("prior");
+    for(i = 0; i < priorList.length; i++){
+      if(priorIDs.includes(priorList[i].id) == false){
+        priorIDs.push(priorList[i].id);
+      }
+    }
+
+    if(priorIDs.length < 3){
+      for(i = 0; i < priorArray.length - 1; i++){
+        if(priorIDs.includes(priorArray[i]) == false){
+
+          var prior = document.createElement("div");
+          var name = priorArray[i];
+
+          prior.setAttribute("class", "prior");
+          prior.setAttribute("id", name);
+
+          var priorName = document.createElement("div");
+          priorName.setAttribute("class", "priorName");
+          priorName.textContent = name;
+
+          var removeBtn = document.createElement("div");
+          removeBtn.setAttribute("class", "removeBtn");
+
+          var x = document.createElement("span");
+          x.setAttribute("class", "fas fa-plus x");
+          removeBtn.appendChild(x);
+
+          prior.appendChild(priorName);
+          prior.appendChild(removeBtn);
+
+          priorSearches.appendChild(prior);
+        }
+      }
+      console.log(priorArray,1, priorIDs, 2);
+    }
+
+    else if(priorIDs.length == 3 && priorIDs.includes(input) == false){
+
+      //remove oldest search item
+      var name = priorIDs[0];
+      var toRemove = document.getElementById(name)
+      toRemove.remove();
+
+      for(i = 0; i < priorArray.length; i++){
+        if(priorArray[i] == name){
+          var num = i;
+          priorArray.splice(num, 1);
+        }
+      }
+      for(i = 0; i < priorIDs.length; i++){
+        if(priorIDs[i] == name){
+          var num = i;
+          priorIDs.splice(num, 1);
+        }
+      }
+
+      for(i = 0; i < priorArray.length - 1; i++){
+        if(priorIDs.includes(priorArray[i]) == false){
+
+          var prior = document.createElement("div");
+          var name = priorArray[i];
+
+          prior.setAttribute("class", "prior");
+          prior.setAttribute("id", name);
+
+          var priorName = document.createElement("div");
+          priorName.setAttribute("class", "priorName");
+          priorName.textContent = name;
+
+          var removeBtn = document.createElement("div");
+          removeBtn.setAttribute("class", "removeBtn");
+
+          var x = document.createElement("span");
+          x.setAttribute("class", "fas fa-plus x");
+          removeBtn.appendChild(x);
+
+          prior.appendChild(priorName);
+          prior.appendChild(removeBtn);
+
+          priorSearches.appendChild(prior);
+        }
+      }
+      console.log(priorArray,1, priorIDs, 2);
+    }
+
+  }
+
   $(window).on("orientationchange", function(event){
     if(window.innerWidth > window.innerHeight){
       setTimeout($("#searchInput").attr("style", "width: 50vw"), 200);
@@ -226,4 +319,125 @@ $(document).ready(function(){
       setTimeout($("#searchInput").attr("style", "width: 80vw"), 200);
     }
   });
+
+  /******remove from previous searches function*****/
+  $(document).on("click", "div.removeBtn", function(){
+    var name = this.parentNode.id;
+
+    var toRemove = document.getElementById(name);
+    toRemove.remove();
+
+    for(i = 0; i < priorArray.length; i++){
+      if(priorArray[i] == name){
+        var num = i;
+        priorArray.splice(num, 1);
+      }
+    }
+    for(i = 0; i < priorIDs.length; i++){
+      if(priorIDs[i] == name){
+        var num = i;
+        priorIDs.splice(num, 1);
+      }
+    }
+    console.log(priorArray,3, priorIDs, 4);
+  });
+
+  /********search for previous search term function*****/
+  $(document).on("click", "div.priorName", function(){
+    input = this.textContent;
+
+    document.getElementById("searchInput").value = input;
+
+    $("#searchBtn").trigger("click");
+
+    var priorSearches = document.getElementById("priorSearches");
+    var priorList = document.getElementsByClassName("prior");
+    for(i = 0; i < priorList.length; i++){
+      if(priorIDs.includes(priorList[i].id) == false){
+        priorIDs.push(priorList[i].id);
+      }
+    }
+
+    if(priorIDs.length < 3){
+      for(i = 0; i < priorArray.length; i++){
+        if(priorIDs.includes(priorArray[i]) == false){
+
+          var prior = document.createElement("div");
+          var name = priorArray[i];
+
+          prior.setAttribute("class", "prior");
+          prior.setAttribute("id", name);
+
+          var priorName = document.createElement("div");
+          priorName.setAttribute("class", "priorName");
+          priorName.textContent = name;
+
+          var removeBtn = document.createElement("div");
+          removeBtn.setAttribute("class", "removeBtn");
+
+          var x = document.createElement("span");
+          x.setAttribute("class", "fas fa-plus x");
+          removeBtn.appendChild(x);
+
+          prior.appendChild(priorName);
+          prior.appendChild(removeBtn);
+
+          priorSearches.appendChild(prior);
+        }
+      }
+      console.log(priorArray,1, priorIDs, 2);
+    }
+
+    else if(priorIDs.length == 3 && priorIDs.includes(input) == false){
+
+      //remove oldest search item
+      var name = priorIDs[0];
+      var toRemove = document.getElementById(name)
+      toRemove.remove();
+
+      for(i = 0; i < priorArray.length; i++){
+        if(priorArray[i] == name){
+          var num = i;
+          priorArray.splice(num, 1);
+        }
+      }
+      for(i = 0; i < priorIDs.length; i++){
+        if(priorIDs[i] == name){
+          var num = i;
+          priorIDs.splice(num, 1);
+        }
+      }
+
+      for(i = 0; i < priorArray.length; i++){
+        if(priorIDs.includes(priorArray[i]) == false){
+
+          var prior = document.createElement("div");
+          var name = priorArray[i];
+
+          prior.setAttribute("class", "prior");
+          prior.setAttribute("id", name);
+
+          var priorName = document.createElement("div");
+          priorName.setAttribute("class", "priorName");
+          priorName.textContent = name;
+
+          var removeBtn = document.createElement("div");
+          removeBtn.setAttribute("class", "removeBtn");
+
+          var x = document.createElement("span");
+          x.setAttribute("class", "fas fa-plus x");
+          removeBtn.appendChild(x);
+
+          prior.appendChild(priorName);
+          prior.appendChild(removeBtn);
+
+          priorSearches.appendChild(prior);
+        }
+      }
+      console.log(priorArray,1, priorIDs, 2);
+    }
+
+  });
+
+
 });

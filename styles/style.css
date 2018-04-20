@@ -61,22 +61,26 @@ h1{
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+  z-index: 6;
 }
 
-.prior p{
-  padding-right: 5px;
-  margin: 0;
-  border-right: 1px solid black;
+.priorName{
+  height: auto;
+  width: auto;
   font-family: "Roboto", sans-serif;
   font-size: 4vh;
 }
 
-.x{
+.removeBtn{
   margin-left: 5px;
-  height: 100%;
-  transform: rotate(45deg);
+  height: auto;
+  width: auto;
+  border-left: 1px solid black;
 }
 
+.x{
+  transform: rotate(45deg);
+}
 
 @media only screen and (orientation: portrait){
   h1{
@@ -113,8 +117,6 @@ h1{
   }
 
 }
-
-
 
 .button{
   height: 8vh;
