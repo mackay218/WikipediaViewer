@@ -40,6 +40,43 @@ h1{
   transition: 0.5s;
 }
 
+.searchContainer{
+  grid-row: 2/3;
+  grid-column: 1/4;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10vw;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.prior{
+  width: auto;
+  height: 5vh;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.prior p{
+  padding-right: 5px;
+  margin: 0;
+  border-right: 1px solid black;
+  font-family: "Roboto", sans-serif;
+  font-size: 4vh;
+}
+
+.x{
+  margin-left: 5px;
+  height: 100%;
+  transform: rotate(45deg);
+}
+
 
 @media only screen and (orientation: portrait){
   h1{
@@ -119,12 +156,15 @@ h1{
   }
 
   .buttonContainer{
+    width: 60vw;
     margin-left: 2vw;
   }
 
   .button{
-    width: 12vw;
+    width: 15vw;
     font-size: 4vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 }
 
