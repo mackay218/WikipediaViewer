@@ -219,10 +219,10 @@ $(document).ready(function(){
 
   $(window).on("orientationchange", function(event){
     if(window.innerWidth > window.innerHeight){
-      $("#searchInput").attr("style", "width: 50vw");
+      $("#searchInput").attr("style", "width: 80vw");
     }
     else if(window.innerHeight > window.innerWidth){
-      $("#searchInput").attr("style", "width: 80vw");
+      $("#searchInput").attr("style", "width: 50vw");
     }
   });
 });

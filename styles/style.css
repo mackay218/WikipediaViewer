@@ -93,13 +93,28 @@ h1{
   padding-right: 10vw;
 }
 
-.buttonContainer{
-  flex-grow: 1;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+@media only screen and (orientation: portrait){
+  .buttonContainer{
+    flex-grow: 1;
+    display: flex;
+    height: auto;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
 }
+
+@media only screen and (orientation: landscape){
+  .buttonContainer{
+    flex-grow: 1;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+}
+
+
 
 .button{
   height: 8vh;
