@@ -49,6 +49,7 @@ h1{
   justify-content: center;
   overflow-y: hidden;
   overflow-x: scroll;
+  z-index: 6;
 }
 
 .prior{
