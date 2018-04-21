@@ -233,7 +233,7 @@ $(document).ready(function(){
       for(i = 0; i < priorArray.length - 1; i++){
         if(priorIDs.includes(priorArray[i]) == false){
 
-          var prior = document.createElement("div");
+          var prior = document.createElement("button");
           var name = priorArray[i];
 
           prior.setAttribute("class", "prior");
@@ -282,7 +282,7 @@ $(document).ready(function(){
       for(i = 0; i < priorArray.length - 1; i++){
         if(priorIDs.includes(priorArray[i]) == false){
 
-          var prior = document.createElement("div");
+          var prior = document.createElement("button");
           var name = priorArray[i];
 
           prior.setAttribute("class", "prior");
@@ -362,7 +362,7 @@ $(document).ready(function(){
       for(i = 0; i < priorArray.length; i++){
         if(priorIDs.includes(priorArray[i]) == false){
 
-          var prior = document.createElement("div");
+          var prior = document.createElement("button");
           var name = priorArray[i];
 
           prior.setAttribute("class", "prior");
@@ -411,7 +411,7 @@ $(document).ready(function(){
       for(i = 0; i < priorArray.length; i++){
         if(priorIDs.includes(priorArray[i]) == false){
 
-          var prior = document.createElement("div");
+          var prior = document.createElement("button");
           var name = priorArray[i];
 
           prior.setAttribute("class", "prior");

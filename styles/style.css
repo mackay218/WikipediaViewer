@@ -59,6 +59,7 @@ h1{
   padding-right: 5px;
   border-right: 1px solid black;
   border-left: 1px solid black;
+  outline: none;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
